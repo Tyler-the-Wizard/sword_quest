@@ -1,3 +1,43 @@
-1. Radiant Sword
+1. Top swords
+   1a. Radiant Sword
 
-2. Demonic Sword
+   1b. Demonic Sword
+
+2. Elemental swords
+   2a. Flame sword
+   2b. Ice sword
+   2c. Lightning sword
+   2d. Earth sword
+
+3. Elemental derivative swords
+   3aI:   Firestarter
+   3aII:  Scorch
+   3aIII: Firebrand
+
+   3bI:   Coldbringer
+   3bII:  Chill
+   3bIII: Frostbrand
+
+   3cI:   Sparkler
+   3cII:  Zap
+   3cIII: Windforce
+
+   3dI:   Rockedge
+   3dII:  Crush
+   3dIII: Stoneforce
+
+4. Forged swords
+   4a. 
+
+5. Magic swords
+   5a. Spellblade
+
+6. Basic swords
+
+7. Starter sword
+   7a. Dull blade
+   7b. Sharpened blade
+   7c. Honed blade
+   7d. Tuned blade
+   7e. True tuned blade
+   7f. Ultimate tuned blade
