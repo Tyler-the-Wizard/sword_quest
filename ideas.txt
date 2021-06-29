@@ -1,3 +1,6 @@
+==============================
+ SWORDS
+==============================
 1. Top swords
    1a. Radiant Sword
 
@@ -41,3 +44,12 @@
    7d. Tuned blade
    7e. True tuned blade
    7f. Ultimate tuned blade
+
+==============================
+ TYPES OF WEAPON
+==============================
+- Longsword
+- Shortsword
+- Dagger
+- Greatsword
+- Axe
