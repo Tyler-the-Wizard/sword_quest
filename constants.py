@@ -6,4 +6,4 @@ C_BLACK = (0, 0, 0)
 C_WHITE = (255, 255, 255)
 
 # Sprite sheets
-SS_ENEMIES = 0
+SS_TILES = 0

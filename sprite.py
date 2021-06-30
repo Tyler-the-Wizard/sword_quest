@@ -2,16 +2,15 @@ import pygame
 
 import constants
 
-class Sheet:
-    def __init__(self, filename):
-        self.image = pygame.image.load(filename).convert()
+def load_filename(filename):
+    return pygame.image.load("sprites/" + filename).convert()
 
-loaded_sheets = []
+sheet_cache = []
 
-loaded_sheets.insert(constants.SS_ENEMIES, "")
+sheet_cache.insert(constants.SS_TILES, load_filename("tiles.png"))
 
 def load(sheet_index, rect):
-    sheet = loaded_sheets[sheet_index]
+    sheet = sheet_cache[sheet_index]
     sprite = pygame.Surface(rect.size).convert()
     sprite.blit(sheet, (0, 0), rect)
     return sprite
