@@ -14,7 +14,6 @@ def encode_12(num1, num2):
 def decode_12(bytes):
     """Decodes three 8-bit numbers in a byte
     array into two 12-bit numbers"""
-    print("Attempting to convert {}".format(bytes))
     n = [int.from_bytes(x, "big") for x in bytes]
     return (n[0] << 4) | ((n[1] >> 4) & 15), ((n[1] & 15) << 8) | n[2]
 
