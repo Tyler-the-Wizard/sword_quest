@@ -18,6 +18,8 @@ while running:
     tile0 = sprite.load(constants.SS_TILES, pygame.Rect(0, 8, 16, 16))
 
     screen.blit(tile0, (200, 200))
+    screen.blit(tile0, (400, 200))
+    screen.blit(tile0, (600, 800))
 
     pygame.display.flip()
 

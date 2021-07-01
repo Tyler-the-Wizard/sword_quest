@@ -7,3 +7,5 @@ C_WHITE = (255, 255, 255)
 
 # Sprite sheets
 SS_TILES = 0
+
+TILE_SCALE = 64

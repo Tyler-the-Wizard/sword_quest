@@ -13,4 +13,5 @@ def load(sheet_index, rect):
     sheet = sheet_cache[sheet_index]
     sprite = pygame.Surface(rect.size).convert()
     sprite.blit(sheet, (0, 0), rect)
+    sprite = pygame.transform.scale(sprite, (constants.TILE_SCALE, constants.TILE_SCALE))
     return sprite
