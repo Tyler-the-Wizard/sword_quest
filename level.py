@@ -3,7 +3,7 @@ drawing them on the screen. The file format for a level is
 12 bytes for the width, then 12 bytes for the height, then
 12 bytes representing the tile each time."""
 
-#import sprite
+import sprite
 
 def encode_12(num1, num2):
     """Encodes two 12-bit numbers as three 8-bit numbers
@@ -14,23 +14,29 @@ def encode_12(num1, num2):
 def decode_12(bytes):
     """Decodes three 8-bit numbers in a byte
     array into two 12-bit numbers"""
+    print("Attempting to convert {}".format(bytes))
     n = [int.from_bytes(x, "big") for x in bytes]
     return (n[0] << 4) | ((n[1] >> 4) & 15), ((n[1] & 15) << 8) | n[2]
 
 def save(filename, level):
     file = open(filename, "wb")
-    for byte in level:
-        file.write(byte.to_bytes(1, byteorder='big'))
+
+    for i in range(0, len(level), 2):
+        bytes = encode_12(level[i], level[i + 1])
+        file.write(b''.join(bytes))
 
     file.close()
 
 def load(filename):
     file = open(filename, "rb")
-
+    data = file.read()
     file.close()
+
+    level = []
+    for i in range(0, len(data), 3):
+        level.extend(decode_12([data[i + x].to_bytes(1, 'big') for x in range(3)]))
+
+    return level
 
 def draw(level, screen):
     pass
-
-# test code
-save("test.lv", [48, 49, 50, 51, 52, 53])
