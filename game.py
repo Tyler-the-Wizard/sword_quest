@@ -3,6 +3,7 @@ import pygame
 import constants
 
 pygame.init()
+clock = pygame.time.Clock()
 pygame.display.init()
 
 screen = pygame.display.set_mode(constants.SCREEN_SIZE)
@@ -22,6 +23,7 @@ while running:
     tile0.draw(screen)
 
     pygame.display.flip()
+    clock.tick(constants.FPS)
 
     # handle events
     for event in pygame.event.get():
