@@ -2,16 +2,26 @@ import pygame
 
 import constants
 
-def load_filename(filename):
+def load_spritesheet(filename):
     return pygame.image.load("sprites/" + filename).convert()
 
 sheet_cache = []
 
-sheet_cache.insert(constants.SS_TILES, load_filename("tiles.png"))
+# Load all spritesheets
+sheet_cache.insert(constants.SS_TILES, load_spritesheet("tiles.png"))
+class Sprite:
+    def __init__(self, sheet_index, rect, coords):
+        """
+        sheet_index : index of spritesheet (from constants file)
+        rect : rect containing coordinates on the spritesheet
+        coords : tuple2 containing position of the sprite in x, y
+        """
 
-def load(sheet_index, rect):
-    sheet = sheet_cache[sheet_index]
-    sprite = pygame.Surface(rect.size).convert()
-    sprite.blit(sheet, (0, 0), rect)
-    sprite = pygame.transform.scale(sprite, (constants.TILE_SCALE, constants.TILE_SCALE))
-    return sprite
+        surf = pygame.Surface(rect.size).convert()
+        surf.blit(sheet_cache[sheet_index], (0, 0), rect)
+        self.image = pygame.transform.scale(surf, (constants.TILE_SCALE, constants.TILE_SCALE))
+
+        self.x, self.y = coords
+
+    def draw(self, surface):
+        surface.blit(self.image, (self.x, self.y))

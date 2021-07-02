@@ -2,8 +2,8 @@
 drawing them on the screen. The file format for a level is
 12 bytes for the width, then 12 bytes for the height, then
 12 bytes representing the tile each time."""
-
-import sprite
+# TODO : might not want to handle drawing levels here.
+# decouple drawing to its own file
 
 def encode_12(num1, num2):
     """Encodes two 12-bit numbers as three 8-bit numbers
