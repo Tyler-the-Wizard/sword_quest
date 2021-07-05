@@ -7,20 +7,18 @@ clock = pygame.time.Clock()
 pygame.display.init()
 
 screen = pygame.display.set_mode(constants.SCREEN_SIZE)
-pygame.display.set_caption("My awesome swords game!!!!")
+pygame.display.set_caption("Quest of the Two Swords")
 
-from tile import Tile
+import tile
 
 running = True
 while running:
     screen.fill(constants.C_BLACK)
 
-    # Test code: draw a tile
-    tile0 = Tile(pygame.Rect(0, 8, 16, 16), (200, 400), {"can_touch": True})
-    tile0.draw(screen)
-
-    tile0.x, tile0.y = 400, 600
-    tile0.draw(screen)
+    # Test code: draw some tiles
+    tile.TILES[1].draw(screen, (0, 0))
+    tile.TILES[1].draw(screen, (64, 0))
+    tile.TILES[1].draw(screen, (0, 64))
 
     pygame.display.flip()
     clock.tick(constants.FPS)
