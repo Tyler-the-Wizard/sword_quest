@@ -19,6 +19,7 @@ while running:
     tile.TILES[1].draw(screen, (0, 0))
     tile.TILES[1].draw(screen, (64, 0))
     tile.TILES[1].draw(screen, (0, 64))
+    tile.TILES[2].draw(screen, (64, 64))
 
     pygame.display.flip()
     clock.tick(constants.FPS)

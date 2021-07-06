@@ -10,4 +10,4 @@ C_WHITE = (255, 255, 255)
 SS_TILES = 0
 
 # Tiles
-TILE_SCALE = 64
+TILE_SCALE = 4

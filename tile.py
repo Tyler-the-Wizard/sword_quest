@@ -10,7 +10,6 @@ class Tile(Sprite):
     def __init__(self, rect, props = {}):
         """
         rect : rect containing coordinates on the spritesheet
-        coords : tuple2 containing position of the sprite in x, y
         props : dict containing properties of the tile
             can_touch : bool (default True)
         """

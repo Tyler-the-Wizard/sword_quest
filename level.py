@@ -37,5 +37,5 @@ def load(filename):
 
     return level
 
-def draw(level, screen):
+def draw(level, surf):
     pass

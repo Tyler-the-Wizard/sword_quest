@@ -19,7 +19,8 @@ class Sprite:
 
         surf = pygame.Surface(rect.size).convert()
         surf.blit(sheet_cache[sheet_index], (0, 0), rect)
-        self.image = pygame.transform.scale(surf, (constants.TILE_SCALE, constants.TILE_SCALE))
+        self.image = pygame.transform.scale(surf, (surf.get_width()  * constants.TILE_SCALE,
+                                                   surf.get_height() * constants.TILE_SCALE))
 
         self.x, self.y = coords
 
