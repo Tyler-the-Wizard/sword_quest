@@ -5,6 +5,8 @@ drawing them on the screen. The file format for a level is
 # TODO : might not want to handle drawing levels here.
 # decouple drawing to its own file
 
+import constants
+
 def encode_12(num1, num2):
     """Encodes two 12-bit numbers as three 8-bit numbers
     and returns them as a byte array"""
@@ -48,4 +50,5 @@ def draw(level, surf):
         for col in range(height):
             tile = TILES[level[2:][row * width + col % width]]
             if tile != 0:
-                tile.draw(surf, (row * tile.width, col * tile.height))
+                tile.draw(surf, (row * constants.TILE_SCALE * constants.GRAPHICS_SCALE,
+                                 col * constants.TILE_SCALE * constants.GRAPHICS_SCALE))

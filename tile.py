@@ -16,7 +16,16 @@ class Tile(Sprite):
 
         self.can_touch = ("can_touch" in props.keys()) and props["can_touch"] or True
 
-        super().__init__(constants.SS_TILES, rect, (0, 0))
+        super().__init__(
+            constants.SS_TILES,
+            (
+                rect[0] * constants.TILE_SCALE,
+                rect[1] * constants.TILE_SCALE,
+                rect[2],
+                rect[3]
+            ),
+            (0, 0)
+        )
 
     def draw(self, surface, coords):
         surface.blit(self.image, coords)
@@ -24,7 +33,7 @@ class Tile(Sprite):
 # The global array of tiles; used to draw levels
 TILES = [
     0,
-    Tile(pygame.Rect(0  * 8, 1  * 8, 16, 16)),
-    Tile(pygame.Rect(14 * 8, 4  * 8, 8, 8)),
-    Tile(pygame.Rect(16 * 8, 6  * 8, 32, 16))
+    Tile((0, 1, 16, 16)),
+    Tile((14, 4, 8, 8)),
+    Tile((16, 6, 32, 16))
 ]
