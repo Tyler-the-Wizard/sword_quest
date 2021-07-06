@@ -16,29 +16,26 @@ pygame.display.set_caption("Quest of the Two Swords")
 import level
 
 # Test code: draw a level
-test_level = [8, 8,
-    1, 0, 1, 0, 1, 0, 1, 0,
-    0, 0, 0, 0, 0, 0, 0, 0,
-    1, 0, 2, 2, 0, 0, 1, 0,
-    0, 0, 2, 0, 0, 0, 0, 0,
-    1, 0, 0, 0, 0, 0, 1, 0,
-    0, 0, 0, 0, 0, 2, 0, 0,
-    1, 0, 1, 0, 1, 0, 1, 0,
-    0, 0, 0, 0, 0, 0, 0, 0
-]
+# test_level = [48, 24] + [1, 0] * 24 + [0] * 48 + ([1] + [0] * 45 + [1, 0] + [0] * 48) * 10 + [1, 0] * 24 + [0] * 48
+# level.save("levels/big_level.lv", test_level)
 
-# level.save("levels/test_level.lv", test_level)
+# test_level = [8, 4,
+#     2, 2, 2, 2, 2, 2, 2, 2,
+#     2, 0, 0, 0, 0, 0, 0, 2,
+#     2, 0, 0, 0, 0, 0, 0, 2,
+#     2, 2, 2, 2, 2, 2, 2, 2
+# ]
+# level.save("levels/wide_level.lv", test_level)
 
-my_level = level.load("levels/test_level.lv")
+my_level = level.load("levels/big_level.lv")
 camera = pygame.Surface((my_level[0] * constants.TILE_SCALE * constants.GRAPHICS_SCALE,
                          my_level[1] * constants.TILE_SCALE * constants.GRAPHICS_SCALE))
+level.draw(my_level, camera)
 
 running = True
 while running:
     screen.fill(constants.C_BLACK)
-    camera.fill(constants.C_BLACK)
 
-    level.draw(my_level, camera)
 
     screen.blit(camera, config.camera_pos)
     pygame.display.flip()

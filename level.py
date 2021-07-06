@@ -20,6 +20,10 @@ def decode_12(bytes):
     return (n[0] << 4) | ((n[1] >> 4) & 15), ((n[1] & 15) << 8) | n[2]
 
 def save(filename, level):
+    # If level has an odd number we need to make it even
+    if len(level) & 1:
+        level.append(0)
+
     file = open(filename, "wb")
 
     for i in range(0, len(level), 2):
@@ -46,9 +50,9 @@ def draw(level, surf):
     # level[2:] = rest of the level data
     width = level[0]
     height = level[1]
-    for row in range(width):
-        for col in range(height):
-            tile = TILES[level[2:][row * width + col % width]]
+    for row in range(height):
+        for col in range(width):
+            tile = TILES[level[2:][row * width + col]]
             if tile != 0:
-                tile.draw(surf, (row * constants.TILE_SCALE * constants.GRAPHICS_SCALE,
-                                 col * constants.TILE_SCALE * constants.GRAPHICS_SCALE))
+                tile.draw(surf, (col * constants.TILE_SCALE * constants.GRAPHICS_SCALE,
+                                 row * constants.TILE_SCALE * constants.GRAPHICS_SCALE))
