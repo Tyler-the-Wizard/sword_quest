@@ -37,5 +37,15 @@ def load(filename):
 
     return level
 
+from tile import TILES
 def draw(level, surf):
-    pass
+    # level[0] = width of level, in tiles
+    # level[1] = height of level, in tiles
+    # level[2:] = rest of the level data
+    width = level[0]
+    height = level[1]
+    for row in range(width):
+        for col in range(height):
+            tile = TILES[level[2:][row * width + col % width]]
+            if tile != 0:
+                tile.draw(surf, (row * tile.width, col * tile.height))

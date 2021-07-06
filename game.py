@@ -9,17 +9,23 @@ pygame.display.init()
 screen = pygame.display.set_mode(constants.SCREEN_SIZE)
 pygame.display.set_caption("Quest of the Two Swords")
 
-import tile
+import level
 
 running = True
 while running:
     screen.fill(constants.C_BLACK)
 
-    # Test code: draw some tiles
-    tile.TILES[1].draw(screen, (0, 0))
-    tile.TILES[1].draw(screen, (64, 0))
-    tile.TILES[1].draw(screen, (0, 64))
-    tile.TILES[2].draw(screen, (64, 64))
+    # Test code: draw a level
+    level.draw([8, 8,
+        1, 1, 1, 1, 1, 1, 1, 1,
+        1, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 2, 2, 0, 0, 0, 1,
+        1, 0, 2, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 0, 0, 1,
+        1, 0, 0, 0, 0, 2, 0, 1,
+        1, 0, 0, 0, 0, 0, 0, 1,
+        1, 1, 1, 1, 1, 1, 1, 1
+    ], screen)
 
     pygame.display.flip()
     clock.tick(constants.FPS)

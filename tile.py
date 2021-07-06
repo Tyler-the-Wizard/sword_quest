@@ -19,12 +19,12 @@ class Tile(Sprite):
         super().__init__(constants.SS_TILES, rect, (0, 0))
 
     def draw(self, surface, coords):
-        self.x, self.y = coords
-        super().draw(surface)
+        surface.blit(self.image, coords)
 
 # The global array of tiles; used to draw levels
 TILES = [
     0,
     Tile(pygame.Rect(0  * 8, 1  * 8, 16, 16)),
+    Tile(pygame.Rect(14 * 8, 4  * 8, 8, 8)),
     Tile(pygame.Rect(16 * 8, 6  * 8, 32, 16))
 ]

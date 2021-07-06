@@ -23,6 +23,8 @@ class Sprite:
                                                    surf.get_height() * constants.TILE_SCALE))
 
         self.x, self.y = coords
+        self.width = rect.width * constants.TILE_SCALE
+        self.height = rect.height * constants.TILE_SCALE
 
     def draw(self, surface):
         surface.blit(self.image, (self.x, self.y))
