@@ -1,5 +1,5 @@
 def init():
-    global camera_pos, L, R, U, D
+    global camera_pos, L, R, U, D, sprites, monsters, player
 
     camera_pos = (100, 0)
 
@@ -8,3 +8,10 @@ def init():
     R = False
     U = False
     D = False
+
+    # Global arrays for drawing objects to the screen
+    sprites = []
+    monsters = []
+
+    # Several important game objects
+    player = False

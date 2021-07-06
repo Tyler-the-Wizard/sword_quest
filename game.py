@@ -32,12 +32,25 @@ camera = pygame.Surface((my_level[0] * constants.TILE_SCALE * constants.GRAPHICS
                          my_level[1] * constants.TILE_SCALE * constants.GRAPHICS_SCALE))
 level.draw(my_level, camera)
 
+# Initialize the player
+import player as pl
+config.player = pl.Player()
+
 running = True
 while running:
     screen.fill(constants.C_BLACK)
 
-
+    # Add the level to the screen
     screen.blit(camera, config.camera_pos)
+
+    # Draw all miscellaneous sprites
+    for sprite in config.sprites:
+        sprite.draw(camera)
+
+    # Draw all monsters
+    for monster in config.monsters:
+        monster.draw(camera)
+
     pygame.display.flip()
     clock.tick(constants.FPS)
 
@@ -49,12 +62,18 @@ while running:
             event_handler.handle(event)
 
     # Movement
-    # Temporary location: these just move the camera for now.
+    # Temporary location: may be moved later
     if config.L:
-        config.camera_pos = (config.camera_pos[0] + 2, config.camera_pos[1])
+        config.player.x -= constants.PLAYER_SPEED
     if config.R:
-        config.camera_pos = (config.camera_pos[0] - 2, config.camera_pos[1])
+        config.player.x += constants.PLAYER_SPEED
     if config.U:
-        config.camera_pos = (config.camera_pos[0], config.camera_pos[1] + 2)
+        config.player.y -= constants.PLAYER_SPEED
     if config.D:
-        config.camera_pos = (config.camera_pos[0], config.camera_pos[1] - 2)
+        config.player.y += constants.PLAYER_SPEED
+
+    # Camera position
+    config.camera_pos = (
+        abs(config.camera_pos[0] - config.player.x) / 10,
+        abs(config.camera_pos[1] - config.player.y) / 10,
+    )
