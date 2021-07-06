@@ -16,7 +16,7 @@ while running:
     screen.fill(constants.C_BLACK)
 
     # Test code: draw a level
-    level.draw([8, 8,
+    test_level = [8, 8,
         1, 0, 1, 0, 1, 0, 1, 0,
         0, 0, 0, 0, 0, 0, 0, 0,
         1, 0, 2, 2, 0, 0, 1, 0,
@@ -25,7 +25,11 @@ while running:
         0, 0, 0, 0, 0, 2, 0, 0,
         1, 0, 1, 0, 1, 0, 1, 0,
         0, 0, 0, 0, 0, 0, 0, 0
-    ], screen)
+    ]
+
+    # level.save("levels/test_level.lv", test_level)
+
+    level.draw(level.load("levels/test_level.lv"), screen)
 
     pygame.display.flip()
     clock.tick(constants.FPS)
