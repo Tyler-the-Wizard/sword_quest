@@ -9,6 +9,8 @@ sheet_cache = []
 
 # Load all spritesheets
 sheet_cache.insert(constants.SS_TILES, load_spritesheet("tiles.png"))
+sheet_cache.insert(constants.SS_PLAYER, load_spritesheet("player.png"))
+
 class Sprite:
     def __init__(self, sheet_index, rect, coords):
         """

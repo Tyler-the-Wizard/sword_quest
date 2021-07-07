@@ -47,9 +47,9 @@ while running:
     for sprite in config.sprites:
         sprite.draw(camera)
 
-    # Draw all monsters
-    for monster in config.monsters:
-        monster.draw(camera)
+    # Draw all actors
+    for actor in config.actors:
+        actor.draw(camera)
 
     pygame.display.flip()
     clock.tick(constants.FPS)

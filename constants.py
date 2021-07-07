@@ -9,6 +9,7 @@ C_WHITE = (255, 255, 255)
 
 # Sprite sheets
 SS_TILES = 0
+SS_PLAYER = 1
 
 # Tiles
 TILE_SCALE = 8

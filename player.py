@@ -1,6 +1,6 @@
 """Specifies code around the player itself"""
-from monster import Monster
+from actor import Actor
 
-class Player(Monster):
+class Player(Actor):
     def __init__(self):
         super().__init__("player", (100, 100))
