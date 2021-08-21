@@ -31,7 +31,6 @@ import level
 my_level = level.load("levels/big_level.lv")
 camera = pygame.Surface((my_level[0] * constants.TILE_SCALE * constants.GRAPHICS_SCALE,
                          my_level[1] * constants.TILE_SCALE * constants.GRAPHICS_SCALE))
-level.draw(my_level, camera)
 
 # Initialize the player
 import player as pl
@@ -39,7 +38,8 @@ config.player = pl.Player()
 
 running = True
 while running:
-    screen.fill(constants.C_BLACK)
+    camera.fill(constants.C_BLACK)
+    level.draw(my_level, camera)
 
     # Draw all miscellaneous sprites
     for sprite in config.sprites:
