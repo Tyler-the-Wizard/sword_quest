@@ -1,7 +1,10 @@
 # Game constants
 SCREEN_SIZE = (1600, 900)
 FPS = 60 # frames per second
-PLAYER_SPEED = 5
+
+PLAYER_SPEED = 8
+PLAYER_JUMP_POWER = 10
+GRAVITY = 0.5
 
 # Colors
 C_BLACK = (0, 0, 0)

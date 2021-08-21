@@ -17,6 +17,9 @@ def handle(event):
         elif event.key == pygame.K_DOWN:
             config.D = True
 
+        elif event.key == pygame.K_z:
+            config.Jump = True
+
     elif event.type == pygame.KEYUP:
         # A key was released
         if event.key == pygame.K_LEFT:
@@ -27,3 +30,6 @@ def handle(event):
             config.U = False
         elif event.key == pygame.K_DOWN:
             config.D = False
+        
+        elif event.key == pygame.K_z:
+            config.Jump = False

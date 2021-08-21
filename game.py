@@ -1,4 +1,5 @@
 import pygame
+from pygame.constants import SCALED
 
 import config
 import constants
@@ -67,13 +68,16 @@ while running:
         config.player.x -= constants.PLAYER_SPEED
     if config.R:
         config.player.x += constants.PLAYER_SPEED
-    if config.U:
-        config.player.y -= constants.PLAYER_SPEED
-    if config.D:
-        config.player.y += constants.PLAYER_SPEED
+    # if config.U:
+    #     config.player.y -= constants.PLAYER_SPEED
+    # if config.D:
+    #     config.player.y += constants.PLAYER_SPEED
+
+    if config.Jump:
+        config.player.dy = -constants.PLAYER_JUMP_POWER
 
     # Camera position
     config.camera_pos = (
         min(0, constants.SCREEN_SIZE[0] / 2 - config.player.x), 
-        min(0, constants.SCREEN_SIZE[1] / 2 - config.player.y) 
+        min(0, max(constants.SCREEN_SIZE[1], constants.SCREEN_SIZE[1] / 2 - config.player.y) )
     )
