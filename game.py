@@ -41,9 +41,6 @@ running = True
 while running:
     screen.fill(constants.C_BLACK)
 
-    # Add the level to the screen
-    screen.blit(camera, config.camera_pos)
-
     # Draw all miscellaneous sprites
     for sprite in config.sprites:
         sprite.draw(camera)
@@ -51,6 +48,9 @@ while running:
     # Draw all actors
     for actor in config.actors:
         actor.draw(camera)
+
+    # Add the level to the screen
+    screen.blit(camera, config.camera_pos)
 
     pygame.display.flip()
     clock.tick(constants.FPS)
