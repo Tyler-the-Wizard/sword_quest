@@ -74,7 +74,11 @@ while running:
     #     config.player.y += constants.PLAYER_SPEED
 
     if config.Jump:
-        config.player.dy = -constants.PLAYER_JUMP_POWER
+        if config.JumpTimer > 0:
+            config.player.dy = -constants.PLAYER_JUMP_POWER
+            config.JumpTimer -= 1
+        else:
+            config.Jump = False
 
     # Camera position
     config.camera_pos = (

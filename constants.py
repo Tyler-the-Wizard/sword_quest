@@ -4,6 +4,7 @@ FPS = 60 # frames per second
 
 PLAYER_SPEED = 8
 PLAYER_JUMP_POWER = 10
+PLAYER_JUMP_DURATION = 15
 GRAVITY = 0.5
 
 # Colors

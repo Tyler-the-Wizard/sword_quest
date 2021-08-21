@@ -1,4 +1,5 @@
 import pygame
+import constants
 
 import config
 
@@ -19,6 +20,7 @@ def handle(event):
 
         elif event.key == pygame.K_z:
             config.Jump = True
+            config.JumpTimer = constants.PLAYER_JUMP_DURATION
 
     elif event.type == pygame.KEYUP:
         # A key was released
@@ -33,3 +35,4 @@ def handle(event):
         
         elif event.key == pygame.K_z:
             config.Jump = False
+            config.JumpTimer = 0
