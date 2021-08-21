@@ -3,7 +3,7 @@ import constants
 from sprite import Sprite
 
 actors = {
-    "player": (constants.SS_TILES, (0, 0, 8, 8))
+    "player": (constants.SS_PLAYER, (0, 0, 20, 24))
 }
 
 class Actor(Sprite):

@@ -3,7 +3,7 @@ import pygame
 import constants
 
 def load_spritesheet(filename):
-    return pygame.image.load("sprites/" + filename).convert()
+    return pygame.image.load("sprites/" + filename).convert_alpha()
 
 sheet_cache = []
 
@@ -20,7 +20,7 @@ class Sprite:
         """
 
         rect = pygame.Rect(rect)
-        surf = pygame.Surface(rect.size).convert()
+        surf = pygame.Surface(rect.size)
         surf.blit(sheet_cache[sheet_index], (0, 0), rect)
         self.image = pygame.transform.scale(surf, (surf.get_width()  * constants.GRAPHICS_SCALE,
                                                    surf.get_height() * constants.GRAPHICS_SCALE))

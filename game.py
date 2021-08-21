@@ -74,6 +74,5 @@ while running:
 
     # Camera position
     config.camera_pos = (
-        abs(config.camera_pos[0] - config.player.x) / 10,
-        abs(config.camera_pos[1] - config.player.y) / 10,
+        max(0, config.player.x - constants.SCREEN_SIZE[0] / 2), 0
     )
